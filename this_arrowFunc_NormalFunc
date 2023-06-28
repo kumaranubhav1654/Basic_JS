@@ -1,0 +1,26 @@
+//This keyword
+
+//this keyword is bound to Persons object
+
+const Person = {
+  name: "Arjun",
+  age: "27",
+  Details: function () {
+    console.log(`My name is ${this.name} and age is ${this.age}`);
+  }
+};
+
+Person.Details();
+
+//this keyword is NOT bound to Persons object in case of 
+//arrow function.
+
+const Person2 = {
+  name: "Arjun",
+  age: "27",
+  Details: () => {
+    console.log(`My name is ${this.name} and age is ${this.age}`);
+  }
+};
+
+Person2.Details();
