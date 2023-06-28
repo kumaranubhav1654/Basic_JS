@@ -1,0 +1,13 @@
+const numArr = [2, 4, 6, 7];
+
+//Map return a new array
+//Map dosent change the exsisting array
+
+const newArr = numArr.map((ele) => ele * 2);
+console.log("mapArr", newArr);
+
+//forEach dosent return a new array
+//it changes the origional array
+
+numArr.forEach((ele, i, arr) => (arr[i] = ele * 2));
+console.log("origionalAfterForEach", numArr);
