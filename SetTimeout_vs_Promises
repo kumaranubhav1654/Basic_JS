@@ -1,0 +1,23 @@
+console.log(0.1 + 0.2 === 0.3); //False as the actual sum of 0.1 + 0.2
+//is slightly larger than 0.3 due to the rounding errors
+
+//SetTimeout vs Promises:
+
+function a() {
+  console.log("1");
+  setTimeout(() => {
+    console.log("setTimeout1sec");
+  }, 1000);
+  setTimeout(() => {
+    console.log("setTimeout0sec");
+  }, 0);
+  let mypromise = new Promise(function (res, rej) {
+    res("Promise");
+  });
+  mypromise.then((result) => {
+    console.log(result);
+  });
+  console.log("5");
+}
+
+a();
