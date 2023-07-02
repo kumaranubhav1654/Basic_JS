@@ -1,0 +1,20 @@
+// Revese a String
+const reverseStr = (str) => {
+  const strToArr = str.split("");
+  strToArr.reverse();
+  return strToArr.join("");
+};
+
+console.log("Reverse string",reverseStr("anubhav"));
+
+//Check for palindrome
+
+let str1="paap";
+let str2="Paap";
+
+str2=reverseStr(str2);
+
+if(str2.toLowerCase()===str1.toLowerCase())
+console.log("Palindrome")
+else
+console.log("Not a Palindrome")
