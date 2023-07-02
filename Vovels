@@ -1,0 +1,16 @@
+//Vovels in a word
+
+const word = "anubhav";
+const vovels = ["a", "e", "i", "o", "u"];
+var count = 0;
+
+for (let i of word) {
+  if (vovels.includes(i)) count++;
+  //console.log(i) // this will give values
+}
+
+for (let i in word) {
+  //console.log(i)  // this will give index
+}
+
+console.log(count);
