@@ -1,0 +1,12 @@
+//Factorial
+
+const num = prompt("Please Enter a number");
+var fact = 1;
+if (num < 0) {
+  console.log("Factorial not possible");
+} else {
+  for (let i = 1; i <= num; i++) {
+    fact = fact * i;
+  }
+  console.log(`Factorial for ${num} is ${fact}`);
+}
