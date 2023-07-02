@@ -1,0 +1,74 @@
+//Coding in JS
+
+//1. Duplicate elements in array
+
+let numarray = [1, 2, 8, 2, 9, 8];
+
+const duplicates = numarray.filter(
+  (ele, index, arr) => arr.indexOf(ele) !== index
+);
+
+//arr.indexOf(ele) !== index: The condition in the callback function
+//checks if the index of the first occurrence of ele in arr is different
+//from the current index. In other words, it determines if the current element is a duplicate in the array.
+console.log("Answer", duplicates);
+
+//2. Find min and max in array
+
+let arr = [1, 3, 55, 7, 9, 12, 0];
+
+const max = arr.reduce(function (pre, curr) {
+  return pre > curr ? pre : curr;
+});
+
+const min = arr.reduce(function (pre, curr) {
+  return pre < curr ? pre : curr;
+});
+
+console.log("MINAnswer", min);
+console.log("MaxAnswer", max);
+
+//3. 2nd largest value and remove first
+
+let arr2 = [1, 3, 55, 7, 9, 12, 56, 0];
+
+const secondLargestNum = (arr) => {
+  let largest = arr[0];
+  let secondLargest = -222222;
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > largest) {
+      secondLargest = largest;
+      largest = arr[i];
+    } else if (arr[i] !== largest && arr[i] > secondLargest) {
+      secondLargest = arr[i];
+    }
+  }
+  return secondLargest;
+};
+console.log("2ndLargest", secondLargestNum(arr2));
+
+//4. filter() vs. Find()
+//filter() return array with mached specs.
+//find()  returns 1st mat=ched element.
+
+const empArr = [
+  { name: "aa", age: "27" },
+  { name: "asas", age: "25" },
+  { name: "scc", age: "43" },
+  { name: "cxcx", age: "45" },
+  { name: "xcxc", age: "34" },
+  { name: "ert", age: "17" },
+  { name: "yjgj", age: "21" }
+];
+
+const filterArr = empArr.filter((item) => {
+  return item.age > 25;
+});
+
+console.log("Filter", filterArr);
+
+const findArr = empArr.find((item) => {
+  return item.age > 25;
+});
+
+console.log("Find Returns first matched", findArr);
