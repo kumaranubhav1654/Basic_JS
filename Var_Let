@@ -1,0 +1,31 @@
+//Parse float
+
+const a = parseFloat("51");
+const b = 12;
+
+console.log(a + b);
+
+//var vs let
+
+for (let i = 0; i < 4; i++) {
+  setTimeout(() => {
+    console.log("Let", i);
+  }, 1000);
+}
+
+for (var i = 0; i < 4; i++) {
+  setTimeout(() => {
+    console.log("Var", i);
+  }, 1000);
+}
+
+//using var only print seq
+
+for (var k = 0; k < 4; k++) {
+  print(k);
+}
+function print(k) {
+  setTimeout(() => {
+    console.log("Var2", k);
+  }, 1000);
+}
