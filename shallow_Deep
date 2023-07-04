@@ -1,0 +1,32 @@
+//shallow copy:with non-primitive data types like arrays and objects,
+// only a reference to the values is passed. So when the copy is mutated,
+// the original also gets mutated. This is also known as shallow copying.
+
+//Deep copy: f we instead want to copy an object so that we can modify it
+// without affecting the original object, we need to make a deep copy. 
+
+
+const original={
+name:"you"
+}
+const origionalArr=["ape"];
+
+//1 doesn't deep copy nested objects
+const shallowCopyObj = Object.assign({}, original);
+
+//2 doesn't copy functions but deep copies objects
+const deepCopyObj = JSON.parse(JSON.stringify(original));
+
+//3 doesn't deep copy nested objects
+const shallowCopyObj2 = { ...original};
+
+//4 doesn't deep copy nested objects
+const shallowCopyArr = origionalArr.slice();
+
+//5 only shallow copies
+const shallowCopyAr=origionalArr;
+
+console.log(deepCopyObj,shallowCopyAr,shallowCopyObj2,shallowCopyObj,shallowCopyArr);
+
+//Prototype in JS
+
