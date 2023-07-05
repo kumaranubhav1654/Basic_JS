@@ -1,0 +1,15 @@
+//Reverse a string
+const str = "Apple";
+const strRev = str.split("").reverse().join("");
+
+console.log(`Reverse of ${str} is:`,strRev);
+
+//Largest number in an array
+//check for Palindrome
+//FizzBuzz
+//Find the missing number
+//Remove duplicate
+//check for Anagrams
+//Find longest word
+//Check for prime numbers.
+//Count occurance of character in a string.
