@@ -22,18 +22,93 @@ if (strPalindrev === strPalind) console.log("Its a Palindrome", strPalindrev);
 else console.log("Its Not a Palindrome", strPalindrev);
 
 //FizzBuzz
-for (let i = 0; i < 15; ) {
-  console.log((++i % 3 ? "" : "Fizz") + (i % 5 ? "" : "Buzz") || i);
+for (let i = 1; i <= 15; i++) {
+  console.log((i % 3 ? "" : "Fizz") + (i % 5 ? "" : "Buzz") || i);
 }
 
 //Find the missing number
+const numArray = [1, 2, 4, 5, 6];
+const n = numArray.length;
+for (let i = 1; i <= n + 1; i++) {
+  if (i !== numArray[i - 1]) {
+    console.log("Missing num is:", i);
+    break;
+  }
+}
 
-//Remove duplicate
+//Remove duplicate sorted array
+const dupArr = [1, 2, 2, 3, 3, 4, 5, 5, 6];
+const remDuppArr = [dupArr[0]];
+for (let i = 1; i < dupArr.length; i++) {
+  if (dupArr[i - 1] !== dupArr[i]) {
+    remDuppArr.push(dupArr[i]);
+  }
+}
+console.log(remDuppArr);
+
+//Remove duplicate Unsorted array
+const dupArr2 = [1, 2, 6, 2, 3, 5, 4, 5, 5, 6];
+const remDuppArr2 = [];
+for (let i = 0; i < dupArr2.length; i++) {
+  if (i === dupArr2.indexOf(dupArr2[i])) {
+    remDuppArr2.push(dupArr2[i]);
+  }
+}
+console.log(remDuppArr2);
 
 //check for Anagrams
 
+let a = "Listen";
+let b = "Silent";
+if (a.length !== b.length) console.log("Not a Anagram");
+else {
+  a = a.toLowerCase().split("").sort().join("");
+  b = b.toLowerCase().split("").sort().join("");
+  //console.log(a,b);
+  if (a === b) console.log("Anagram");
+  else console.log("Not a Anagram");
+}
+
 //Find longest word
 
+let sentence = "A fox is jumpping outside";
+sentence = sentence.split(" ");
+let maxLength = 0;
+let Ans = "";
+for (let i = 0; i < sentence.length; i++) {
+  if (sentence[i].length >= maxLength) {
+    Ans = sentence[i];
+    maxLength = sentence[i].length;
+  }
+}
+console.log("Longest word is:", Ans);
+
 //Check for prime numbers.
+const primeNum = 47;
+let AnsPrime = "Prime";
+if (primeNum <= 1) AnsPrime = "Neither";
+else {
+  for (let i = 3; i < Math.sqrt(primeNum); i++) {
+    if (primeNum % i === 0) {
+      AnsPrime = "Not Prime";
+      break;
+    }
+  }
+  console.log(AnsPrime);
+}
 
 //Count occurance of character in a string.
+
+function count(word, letter) {
+  const wordArr = word.toLowerCase().split("");
+  let count = 0;
+  for (let i = 0; i < wordArr.length; i++) {
+    if (wordArr[i] === letter) {
+      count++;
+    }
+  }
+  console.log(`Letter ${letter} occured ${count} times.`);
+}
+
+count("Apple", "a");
+count("Apple", "p");
