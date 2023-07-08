@@ -1,0 +1,25 @@
+//console.log(b());  //Error: b is not a function
+//Why Hoisting failed:  the variable declaration var b; is hoisted to the top of its scope, but the assignment b = function() {...} is not hoisted
+console.log(f());  //Dosent throw error as function is hoisted
+var b = function () {
+  return {
+    message: "Hello World"
+  };
+};
+function f() {
+  return {
+    message: "Hello World"
+  };
+}
+
+console.log(b());
+
+//Types of functions and hoisting.
+
+// Note: In the case of function declarations (function a() {}), the function is hoisted
+//  and can be accessed throughout its scope, including before its declaration. On the 
+//  other hand, function expressions (var a = function() {} and const a = () => {}) are
+//   not hoisted and must be declared before they are used.
+
+// It's important to understand the differences between these function declaration types
+//  as they can affect scoping, hoisting, and the behavior of this within the function.
