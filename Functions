@@ -1,0 +1,12 @@
+var a = function() {}:
+This is a function declaration using the var keyword. It assigns an anonymous function to the variable a. The function can be invoked later using a().
+
+const a = () => {}:
+This is a function declaration using arrow function syntax. It assigns an anonymous arrow function to the constant a. Arrow functions are a concise way to declare functions in JavaScript. They are commonly used for shorter, one-line functions. The function can be invoked later using a().
+
+function a() {}:
+This is a function declaration using the function keyword. It declares a named function a. Named functions can be invoked using their name, for example, a(). Function declarations are hoisted to the top of their scope, meaning you can invoke the function even before its actual declaration in the code.
+
+Note: In the case of function declarations (function a() {}), the function is hoisted and can be accessed throughout its scope, including before its declaration. On the other hand, function expressions (var a = function() {} and const a = () => {}) are not hoisted and must be declared before they are used.
+
+It's important to understand the differences between these function declaration types as they can affect scoping, hoisting, and the behavior of this within the function.
