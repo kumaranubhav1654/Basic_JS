@@ -1,0 +1,54 @@
+// #1
+
+//Var has global scope
+
+function a() {
+  for (var i = 0; i < 4; i++) {
+    setTimeout(() => {
+      console.log("#1", i);
+    }, 1000);
+  }
+}
+
+a(); //4 4 4 4
+
+//let has block scope
+function ab() {
+  for (let i = 0; i < 4; i++) {
+    setTimeout(() => {
+      console.log("#1.1", i);
+    }, 1000);
+  }
+}
+
+ab(); //0 1 2 3
+
+// #2
+
+var i = 21;
+const b = function () {
+  console.log("#2", i);
+  var i = 20; //if you comment out this then closure will work
+};
+
+b(); //undefined
+
+//#3
+
+const Emp = {
+  company: "abc"
+};
+
+const emp1 = Object.create(Emp);
+delete emp1.company; // Deletes the 'company' property from the emp1 object.
+console.log("#3", emp1.company); // Output: 'abc', as the property is still accessible through the prototype chain.
+
+//to check only the emp1 property
+
+const Emp2 = {
+  company: "abc"
+};
+
+const emp2 = Object.create(Emp);
+delete emp2.company; // Deletes the 'company' property from the emp1 object.
+console.log("#4", emp1.hasOwnProperty("company")); // Output: false, as the property is not present on emp1 itself.
