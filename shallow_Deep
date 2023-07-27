@@ -2,7 +2,7 @@
 // only a reference to the values is passed. So when the copy is mutated,
 // the original also gets mutated. This is also known as shallow copying.
 
-//Deep copy: f we instead want to copy an object so that we can modify it
+//Deep copy: case were we want to copy an object so that we can modify it
 // without affecting the original object, we need to make a deep copy. 
 
 
